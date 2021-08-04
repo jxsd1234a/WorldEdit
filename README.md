@@ -1,6 +1,7 @@
 <h1>
     <img src="worldedit-logo.svg" alt="WorldEdit" width="400" /> 
-</h1>
+    C触发
+</  h1  >构建
 
 **A Minecraft Map Editor... that runs in-game!**
 
