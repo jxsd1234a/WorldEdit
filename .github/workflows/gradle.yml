@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
@@ -19,8 +19,15 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build -s
     - uses: actions/upload-artifact@v2
-      name: Archive Reports
-      if: always()
       with:
-        name: reports for ${{ matrix.os }}
-        path: '**/build/reports/**'
+       name: Package
+       path: build/libs
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Development Build"
+          files: |
+            build/libs/*.jar
+
