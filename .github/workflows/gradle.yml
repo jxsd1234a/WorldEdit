@@ -29,5 +29,5 @@ jobs:
           prerelease: false
           title: "Development Build"
           files: |
-            build/libs/*.jar
+            worldedit-forge/build/libs/*.jar
 
