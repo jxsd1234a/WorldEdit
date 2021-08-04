@@ -17,7 +17,7 @@ jobs:
       with:
         java-version: 16
     - name: Build with Gradle
-      run: ./gradlew build -s
+      run: ./gradlew :worldedit-fabric:runClient
     - uses: actions/upload-artifact@v2
       with:
        name: Package
